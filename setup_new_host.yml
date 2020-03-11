@@ -1,4 +1,5 @@
 ---
+- name: Configure new host for Ansible
   hosts: all
 
   tasks:
