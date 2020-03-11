@@ -1,7 +1,8 @@
 ---
 # tasks file for network_time
 - name: Ensure required variables are defined
-  fail: msg="Variable '{{ item }}' is not defined"
-  when: item is not defined
+  fail: 
+    msg: "Variable '{{ item }}' is not defined"
+  when: item is undefined
   with_items: "{{ required_vars }}"
 
