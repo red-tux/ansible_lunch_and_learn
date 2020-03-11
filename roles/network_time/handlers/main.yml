@@ -1,2 +1,13 @@
 ---
 # handlers file for network_time
+- name: Restart Chrony
+  service:
+    name: chronyd
+    enabled: yes
+    state: restarted
+
+- name: Restart NTP
+  service:
+    name: ntpd
+    enabled: yes
+    state: restarted

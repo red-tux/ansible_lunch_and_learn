@@ -1,7 +1,7 @@
 ---
 # tasks file for network_time
-- name: Show debug information
-  debug: msg="{{ vars }}"
+# - name: Show debug information
+#   debug: msg="{{ vars }}"
 
 - name: Ensure required variables are defined
   fail: 
@@ -9,3 +9,10 @@
   when: vars[item] is undefined
   loop: "{{ required_vars }}"
 
+- name: Gather package facts
+  package_facts:
+    manager: auto
+
+- name: Include Chrony tasks
+  include:  chrony.yml
+  when: 'chrony' in ansible_facts.packages

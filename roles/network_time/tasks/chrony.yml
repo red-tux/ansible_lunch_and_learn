@@ -1,0 +1,6 @@
+---
+- name: Push chrony config file
+  template:
+    src:  chrony.conf.j2
+    dest: /etc/chrony.conf
+  notify: Restart Chrony
