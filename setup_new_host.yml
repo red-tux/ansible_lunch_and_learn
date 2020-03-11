@@ -14,3 +14,11 @@
         user: ansible
         manage_dir: yes
         key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDMIuXWaMD2d3aQubxtkTIiLCDIHQMKe5nigPK2rJ0Lopw9mV0Tuywgx/LMnJa2P4oCLcVr0UnP9CXkA/OZFXm2FWk5WVrHw4rL2TXC8EkGdFVyf/pUYCR3VxrXaCa2bdbO/Nu53PvtWWptQCJP1l3tSWqjqY+dMN36wzxLNMuH2h1PCFajZRM5k2ElxY90WfAMqXa7/pGGjxJuM6mWyVKzBP09xfMblsznuAVc2QH3YTRTnFwwLRx3L4iSe1HwTENWWT775T+4pVhQ5UtuWuznX3fd6VvAhq/zLASOYjVYgOo7FolMgw5X1ZxW629dZlFYXT3RxbdIZskMe2olYFRT Ansible SSH Key'
+
+    - name: Create Ansible sudo rule
+      copy:
+        src: files/ansible.sudo
+        dest: /etc/sudoers/ansible
+        owner: root
+        group: root
+        mode: 440
