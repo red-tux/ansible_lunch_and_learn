@@ -1,5 +1,8 @@
 ---
 # tasks file for network_time
+- name: Show debug information
+  debug: msg="{{ vars }}"
+
 - name: Ensure required variables are defined
   fail: 
     msg: "Variable '{{ item }}' is not defined"
