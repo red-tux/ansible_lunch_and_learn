@@ -2,4 +2,3 @@
 # vars file for network_time
 required_vars:
   - timeservers
-  - invalid_var
