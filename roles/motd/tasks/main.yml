@@ -1,0 +1,26 @@
+---
+# tasks file for motd
+- name: Push /etc/issue file
+  copy:
+    src: issue
+    dest: /etc/issue
+    owner: root
+    group: root
+    mode: '444'
+
+- name: Configure sshd to display /etc/issue
+  lineinfile:
+    backup: yes
+    line: Banner /etc/issue
+    path: /etc/ssh/sshd.conf
+    state: present
+  notify: Restart sshd
+
+- name: Deploy MOTD file
+  template: 
+    src: motd.j2
+    dest: /etc/motd
+    owner: root
+    group: root
+    mode: '444'
+    
