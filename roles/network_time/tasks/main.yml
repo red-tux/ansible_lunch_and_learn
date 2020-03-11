@@ -3,5 +3,5 @@
 - name: Ensure required variables are defined
   fail: 
     msg: "Variable '{{ item }}' is not defined"
-  when: "{{ item }} is not defined"
+  when: item is not defined
   with_items: "{{ required_vars }}"
