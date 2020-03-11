@@ -12,7 +12,7 @@
   lineinfile:
     backup: yes
     line: Banner /etc/issue
-    path: /etc/ssh/sshd.conf
+    path: /etc/ssh/sshd_conf
     state: present
   notify: Restart sshd
 
@@ -23,4 +23,3 @@
     owner: root
     group: root
     mode: '444'
-    
