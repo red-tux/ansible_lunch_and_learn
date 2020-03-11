@@ -3,6 +3,9 @@
 - name: Show debug information
   debug: msg="{{ vars }}"
 
+- name: Show group_vars debug
+  debug: msg="{{ group_vars }}"
+
 - name: Ensure required variables are defined
   fail: 
     msg: "Variable '{{ item }}' is not defined"
