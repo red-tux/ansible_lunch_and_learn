@@ -1,6 +1,7 @@
 ---
 - name: Configure baseline configurations for host
   hosts: all
+  become: true
 
   roles:
     - network_time
