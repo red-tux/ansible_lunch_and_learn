@@ -15,4 +15,4 @@
 
 - name: Include Chrony tasks
   include:  chrony.yml
-  when: 'chrony' in ansible_facts.packages
+  when: "'chrony' in ansible_facts.packages"
