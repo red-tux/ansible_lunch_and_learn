@@ -4,5 +4,5 @@
   fail: 
     msg: "Variable '{{ item }}' is not defined"
   when: item is undefined
-  with_items: "{{ required_vars }}"
+  loop: "{{ required_vars }}"
 
