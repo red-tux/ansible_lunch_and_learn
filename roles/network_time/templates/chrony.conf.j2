@@ -1,5 +1,5 @@
 {% for i in timeservers %}
-server "{{ i }}" iburst
+server {{ i }} iburst
 {% endfor %}
 
 # Record the rate at which the system clock gains/losses time.
