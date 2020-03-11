@@ -1,0 +1,7 @@
+---
+# tasks file for network_time
+- name: Ensure required variables are defined
+  assert:
+    that: item is defined
+  with_items: "{{ required_vars }}"
+  
