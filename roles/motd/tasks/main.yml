@@ -12,7 +12,7 @@
   lineinfile:
     backup: yes
     line: Banner /etc/issue
-    path: /etc/ssh/sshd_conf
+    path: /etc/ssh/sshd_config
     state: present
   notify: Restart sshd
 
